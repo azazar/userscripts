@@ -65,7 +65,7 @@
                 let workMatch = /^\/work\/(\d+)/.exec(href);
 
                 if (workMatch) {
-                    anchorElement.insertAdjacentHTML('afterend', buildInsertHtml(anchorElement.textContent.trim()));
+                    anchorElement.insertAdjacentHTML('afterend', buildInsertHtml(anchorElement.textContent.trim() + ' ' + Array.from(authors).join(' ')));
                 }
             });
 
