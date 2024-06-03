@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name        Blur Adult Website Images
 // @namespace   Azazar's Scripts
-// @match       http://*/*
-// @match       https://*/*
+// @match       *://*/*
 // @grant       GM_registerMenuCommand
 // @run-at      document-start
 // @license     MIT
