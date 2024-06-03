@@ -22,6 +22,18 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Description:** Скачивание с author.today с оригинальным названием без транслитерации.
 - **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js)
 
+### Samlib Optimized
+
+- **Filename:** samlib-optimized.user.js
+- **Description:** Убирает рекламу, позволяет читать скрытые комментарии, постить комментарии там, где они отключены, смотреть отключенные оценки.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js)
+
+### Flibusta Better Reader
+
+- **Filename:** flibusta-better-reader.user.js
+- **Description:** Шрифт побольше в читалке, ограничение ширины текста и ночной режим.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-better-reader.user.js)
+
 ## Installation
 
 1. Install a userscript manager like [Violentmonkey](https://violentmonkey.github.io/), [Tampermonkey](https://www.tampermonkey.net/), or [Greasemonkey](https://www.greasespot.net/).
