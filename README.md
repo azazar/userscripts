@@ -2,19 +2,21 @@
 
 This repository contains a collection of userscripts designed to enhance your browsing experience on various websites.
 
-## Available Userscripts
-
-### Add FantLab Links to Author.Today
-
-- **Filename:** add-fantlab-links-to-author-today.user.js
-- **Description:** This userscript dynamically adds FantLab links to author profiles and works on the author.today website.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js)
+## General Userscripts
 
 ### Printable and Readable Books Downloader for Fanfiction and Fictionpress
 
 - **Filename:** printable-books-downloader-fanfiction-fictionpress.user.js
 - **Description:** Allows generation of printable HTML, that can be fed to e-book readers.
 - **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/printable-books-downloader-fanfiction-fictionpress.user.js)
+
+## Userscripts for Websites in Russian
+
+### Add FantLab Links to Author.Today
+
+- **Filename:** add-fantlab-links-to-author-today.user.js
+- **Description:** This userscript dynamically adds FantLab links to author profiles and works on the author.today website.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js)
 
 ### Download Author.Today Without Transliteration
 
