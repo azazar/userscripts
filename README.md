@@ -9,6 +9,16 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Filename:** add-fantlab-links-to-author-today.user.js
 - **Description:** This userscript dynamically adds FantLab links to author profiles and works on the author.today website.
 
+### Printable and Readable Books Downloader for Fanfiction and Fictionpress
+
+- **Filename:** printable-books-downloader-fanfiction-fictionpress.user.js
+- **Description:** Allows generation of printable HTML, that can be fed to e-book readers.
+
+### Download Author.Today Without Transliteration
+
+- **Filename:** download-author-today-without-transliteration.user.js
+- **Description:** Скачивание с author.today с оригинальным названием без транслитерации.
+
 ## Installation
 
 1. Install a userscript manager like [Violentmonkey](https://violentmonkey.github.io/), [Tampermonkey](https://www.tampermonkey.net/), or [Greasemonkey](https://www.greasespot.net/).
