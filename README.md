@@ -12,6 +12,24 @@ This repository contains a collection of userscripts designed to enhance your br
 
 ## Userscripts for Websites in Russian
 
+### Качать с author.today названием без транслитерации
+
+- **Имя файла:** download-author-today-without-transliteration.user.js
+- **Описание:** Скачивание с author.today с оригинальным названием без транслитерации.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js)
+
+### Самиздат (samlib.ru) как надо
+
+- **Имя файла:** samlib-optimized.user.js
+- **Описание:** Убирает рекламу, позволяет читать скрытые комментарии, постить комментарии там, где они отключены, смотреть отключенные оценки.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js)
+
+### Добавляем на author.today ссылки на fantlab
+
+- **Имя файла:** add-fantlab-links-to-author-today.user.js
+- **Описание:** Добавляем на author.today ссылки на поиск fantlab.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js)
+
 ### Добавляем на author.today ссылки на Флибусту
 
 - **Имя файла:** add-flibusta-links-to-author-today.user.js
