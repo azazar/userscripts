@@ -10,6 +10,7 @@
 // @description Добавляет название книги и автора в название загружаемого файла на flibusta.is
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js
+// @license     MIT
 // ==/UserScript==
 
 let extMap = {

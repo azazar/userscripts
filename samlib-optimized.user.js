@@ -8,6 +8,7 @@
 // @license     MIT
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js
+// @license     MIT
 // ==/UserScript==
 
 (function() {

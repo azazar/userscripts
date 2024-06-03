@@ -7,6 +7,7 @@
 // @description Добавляем на author.today ссылки на поиск fantlab
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js
+// @license     MIT
 // ==/UserScript==
 
 (function() {

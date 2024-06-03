@@ -7,6 +7,7 @@
 // @description Скачивание с author.today с оригинальным названием без транслитерации
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js
+// @license     MIT
 // ==/UserScript==
 
 let author = Array.from(document.querySelectorAll('.book-meta-panel .book-authors a')).map(a => a.innerText).join(', ');

@@ -7,6 +7,7 @@
 // @description Добавляем на author.today ссылки на поиск Флибусты
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/add-flibusta-links-to-author-today.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/add-flibusta-links-to-author-today.user.js
+// @license     MIT
 // ==/UserScript==
 
 (function() {

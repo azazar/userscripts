@@ -10,6 +10,7 @@
 // @description Automatically blurs images and videos on adult websites
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js
+// @license     MIT
 // ==/UserScript==
 
 (function () {

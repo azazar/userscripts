@@ -8,6 +8,7 @@
 // @grant       GM_xmlhttpRequest
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/printable-books-downloader-fanfiction-fictionpress.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/printable-books-downloader-fanfiction-fictionpress.user.js
+// @license     MIT
 // ==/UserScript==
 
 (function() {
