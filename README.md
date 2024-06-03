@@ -12,29 +12,29 @@ This repository contains a collection of userscripts designed to enhance your br
 
 ## Userscripts for Websites in Russian
 
-### Add FantLab Links to Author.Today
+### Добавляем на author.today ссылки на FantLab
 
-- **Filename:** add-fantlab-links-to-author-today.user.js
-- **Description:** This userscript dynamically adds FantLab links to author profiles and works on the author.today website.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js)
+- **Имя файла:** add-fantlab-links-to-author-today.user.js
+- **Описание:** Этот userscript динамически добавляет ссылки на FantLab в профили авторов и работы на сайте author.today.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js)
 
-### Download Author.Today Without Transliteration
+### Качать с author.today названием без транслитерации
 
-- **Filename:** download-author-today-without-transliteration.user.js
-- **Description:** Скачивание с author.today с оригинальным названием без транслитерации.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js)
+- **Имя файла:** download-author-today-without-transliteration.user.js
+- **Описание:** Скачивание с author.today с оригинальным названием без транслитерации.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js)
 
-### Samlib Optimized
+### Самиздат (samlib.ru) как надо
 
-- **Filename:** samlib-optimized.user.js
-- **Description:** Убирает рекламу, позволяет читать скрытые комментарии, постить комментарии там, где они отключены, смотреть отключенные оценки.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js)
+- **Имя файла:** samlib-optimized.user.js
+- **Описание:** Убирает рекламу, позволяет читать скрытые комментарии, постить комментарии там, где они отключены, смотреть отключенные оценки.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js)
 
-### Flibusta Better Reader
+### Ночная читалка для Флибусты
 
-- **Filename:** flibusta-better-reader.user.js
-- **Description:** Шрифт побольше в читалке, ограничение ширины текста и ночной режим.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-better-reader.user.js)
+- **Имя файла:** flibusta-better-reader.user.js
+- **Описание:** Шрифт побольше в читалке, ограничение ширины текста и ночной режим.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-better-reader.user.js)
 
 ## Installation
 
