@@ -30,12 +30,6 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Описание:** Шрифт побольше в читалке, ограничение ширины текста и ночной режим.
 - **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-better-reader.user.js)
 
-### Качать с Флибусты файлы с адекватными названиями
-
-- **Имя файла:** flibusta-download-filename-builder.user.js
-- **Описание:** Добавляет название книги и автора в название загружаемого файла на flibusta.is.
-- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js)
-
 ## Installation
 
 1. Install a userscript manager like [Violentmonkey](https://violentmonkey.github.io/), [Tampermonkey](https://www.tampermonkey.net/), or [Greasemonkey](https://www.greasespot.net/).
