@@ -12,6 +12,12 @@ This repository contains a collection of userscripts designed to enhance your br
 
 ## Userscripts for Websites in Russian
 
+### Добавляем на author.today ссылки на Флибусту
+
+- **Имя файла:** add-flibusta-links-to-author-today.user.js
+- **Описание:** Добавляем на author.today ссылки на поиск Флибусты.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/add-flibusta-links-to-author-today.user.js)
+
 ### Добавляем на author.today ссылки на FantLab
 
 - **Имя файла:** add-fantlab-links-to-author-today.user.js
@@ -30,11 +36,23 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Описание:** Убирает рекламу, позволяет читать скрытые комментарии, постить комментарии там, где они отключены, смотреть отключенные оценки.
 - **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js)
 
+### Добавляем на author.today ссылки на FantLab
+
+- **Имя файла:** add-fantlab-links-to-author-today.user.js
+- **Описание:** Этот userscript динамически добавляет ссылки на FantLab в профили авторов и работы на сайте author.today.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js)
+
 ### Ночная читалка для Флибусты
 
 - **Имя файла:** flibusta-better-reader.user.js
 - **Описание:** Шрифт побольше в читалке, ограничение ширины текста и ночной режим.
 - **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-better-reader.user.js)
+
+### Качать с author.today названием без транслитерации
+
+- **Имя файла:** download-author-today-without-transliteration.user.js
+- **Описание:** Скачивание с author.today с оригинальным названием без транслитерации.
+- **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js)
 
 ## Installation
 
