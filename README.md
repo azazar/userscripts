@@ -10,6 +10,12 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Description:** Generates printable HTML, that can be fed to e-book readers.
 - **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/printable-books-downloader-fanfiction-fictionpress.user.js)
 
+### Blur Adult Website Images
+
+- **Filename:** blur-adult-website-images.user.js
+- **Description:** Blurs images, videos, and other media on adult websites.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js)
+
 ## Userscripts for Websites in Russian
 
 ### Качать с author.today названием без транслитерации
@@ -47,22 +53,6 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Имя файла:** flibusta-better-reader.user.js
 - **Описание:** Шрифт побольше в читалке, ограничение ширины текста и ночной режим.
 - **Ссылка для установки:** [Установить](https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-better-reader.user.js)
-
-## General Userscripts
-
-### Blur Adult Website Images
-
-- **Filename:** blur-adult-website-images.user.js
-- **Description:** Blurs images, videos, and other media on adult websites.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js)
-
-## General Userscripts
-
-### Blur Adult Website Images
-
-- **Filename:** blur-adult-website-images.user.js
-- **Description:** Blurs images, videos, and other media on adult websites.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js)
 
 ## Installation
 
