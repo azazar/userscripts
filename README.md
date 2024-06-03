@@ -56,6 +56,14 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Description:** Blurs images, videos, and other media on adult websites.
 - **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js)
 
+## General Userscripts
+
+### Blur Adult Website Images
+
+- **Filename:** blur-adult-website-images.user.js
+- **Description:** Blurs images, videos, and other media on adult websites.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js)
+
 ## Installation
 
 1. Install a userscript manager like [Violentmonkey](https://violentmonkey.github.io/), [Tampermonkey](https://www.tampermonkey.net/), or [Greasemonkey](https://www.greasespot.net/).
