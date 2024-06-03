@@ -7,7 +7,7 @@ This repository contains a collection of userscripts designed to enhance your br
 ### Printable and Readable Books Downloader for Fanfiction and Fictionpress
 
 - **Filename:** printable-books-downloader-fanfiction-fictionpress.user.js
-- **Description:** Allows generation of printable HTML, that can be fed to e-book readers.
+- **Description:** Generates printable HTML, that can be fed to e-book readers.
 - **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/printable-books-downloader-fanfiction-fictionpress.user.js)
 
 ## Userscripts for Websites in Russian
