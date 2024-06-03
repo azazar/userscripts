@@ -2,12 +2,11 @@
 // @name        Добавляем на author.today ссылки на fantlab
 // @namespace   Azazar's Scripts
 // @match       https://author.today/*
-// @grant       none
+// @grant       GM_addStyle
 // @version     1.1
 // @description Добавляем на author.today ссылки на поиск fantlab
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js
-// @grant       GM_addStyle
 // ==/UserScript==
 
 (function() {
