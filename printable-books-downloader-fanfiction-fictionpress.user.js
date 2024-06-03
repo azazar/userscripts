@@ -15,7 +15,9 @@
     let printFicBtn = null;
 
     function htmlEntities(str) {
-        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        let e = document.createElement('span');
+        e.appendChild(document.createTextNode(str));
+        return e.innerHTML;
     }
 
     function onAllChapters(author, title, chapters) {
@@ -74,18 +76,18 @@
         $.ajaxSetup({
             async: false
         });
-        var n = 0;
+        let n = 0;
         let chapters = {count: document.getElementById('chap_select').options.length};
         setTimeout(function() {
 
             for (let i = 1; i <= document.getElementById('chap_select').options.length; i++) {
                 let chapTitle = document.getElementById('chap_select').options[i - 1].textContent;
                 n++;
-                console.log("Downloading " + document.location.pathname.substr(3, 8).replace("/", "") + " chapter " + i + " (" + chapTitle + ")");
+                console.log("Downloading " + document.location.pathname.substring(3, 8).replace("/", "") + " chapter " + i + " (" + chapTitle + ")");
                 let $div = $('<div>');
                 let cn = i - 1;
                 chapters[cn] = {number: i, title: chapTitle};
-                $div.load('/s/' + document.location.pathname.substr(3, 8).replace("/", "") + '/' + i + ' #storytext', function(content, result, response){
+                $div.load('/s/' + document.location.pathname.substring(3, 8).replace("/", "") + '/' + i + ' #storytext', function(content, result, response){
                     if (response.status !== 200) {
                         location.reload();
                         return;
