@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name        Add fantlab links to author.today
-// @namespace   Violentmonkey Scripts
+// @name        Добавляем на author.today ссылки на fantlab
+// @namespace   Azazar's Scripts
 // @match       https://author.today/*
 // @grant       none
 // @version     1.1
-// @description Adds FantLab links to author.today dynamically
+// @description Добавляем на author.today ссылки на поиск fantlab
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/add-fantlab-links-to-author-today.user.js
 // ==/UserScript==
