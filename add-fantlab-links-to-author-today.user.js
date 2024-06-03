@@ -39,16 +39,16 @@
             }
             feedRowElement.fantlabLinksAdded = true;
 
-            let authors = [];
-            let anchors = Array.from(feedRowElement.querySelectorAll('a[href]')).filter(a => isTextOnly(a));
+            let authors = new Set();
+            let anchors = Array.from(feedRowElement.querySelectorAll('a[href]')).filter(a => isTextOnly(a) && !a.fantlabLinksAdded);
 
             anchors.forEach(anchorElement => {
                 let href = anchorElement.getAttribute('href');
                 let userMatch = /^\/u\/([^\/]+)/.exec(href);
 
                 if (userMatch) {
-                    authors.push(anchorElement.textContent.trim());
-                    anchorElement.insertAdjacentHTML('afterend', `<a href="https://fantlab.ru/searchmain?searchstr=${encodeURIComponent(anchorElement.textContent.trim())}"><img class="userscript-fl" src="https://fantlab.ru/favicon.ico"></a>`);
+                    authors.add(anchorElement.textContent.trim());
+                    anchorElement.insertAdjacentHTML('afterend', `<a class="userscript-fl" href="https://fantlab.ru/searchmain?searchstr=${encodeURIComponent(anchorElement.textContent.trim())}"><img src="https://fantlab.ru/favicon.ico"></a>`);
                 }
             });
 
@@ -57,11 +57,15 @@
                 let workMatch = /^\/work\/(\d+)/.exec(href);
 
                 if (workMatch) {
-                    anchorElement.insertAdjacentHTML('afterend', `<a href="https://fantlab.ru/searchmain?searchstr=${encodeURIComponent(anchorElement.textContent.trim() + ' ' + authors.join(' '))}"><img class="userscript-fl" src="https://fantlab.ru/favicon.ico"></a>`);
+                    anchorElement.insertAdjacentHTML('afterend', `<a class="userscript-fl" href="https://fantlab.ru/searchmain?searchstr=${encodeURIComponent(anchorElement.textContent.trim() + ' ' + Array.from(authors).join(' '))}"><img src="https://fantlab.ru/favicon.ico"></a>`);
                 }
             });
+
+            anchors.forEach(anchorElement => anchorElement.fantlabLinksAdded = true);
         });
     }
+
+    GM_addStyle('.userscript-fl img { margin-left: 5px; vertical-align: middle; height: 1em }');
 
     addFantlabLinks(document.body);
 
@@ -80,5 +84,3 @@
         subtree: true
     });
 })();
-
-GM_addStyle('.userscript-fl { margin-left: 5px; vertical-align: middle; height: 1em }');
