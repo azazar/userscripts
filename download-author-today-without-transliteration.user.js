@@ -3,7 +3,7 @@
 // @namespace   Azazar's Scripts
 // @match       https://author.today/work/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @description Скачивание с author.today с оригинальным названием без транслитерации
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/download-author-today-without-transliteration.user.js
@@ -16,17 +16,12 @@ let title = document.querySelector('.book-meta-panel h1.book-title').innerText;
 let fileName = `${title}. ${author}`;
 
 document.querySelectorAll('a[href^="/work/download?"]').forEach(anchor => {
-  let pairs = anchor.search.substring(1).split('&');
+  let urlParams = new URLSearchParams(anchor.search);
 
   anchor.onclick = undefined;
 
-  for(let i = 0; i < pairs.length; i++) {
-    if (pairs[i].startsWith('fileName=')) {
-      pairs[i] = 'fileName=' + encodeURIComponent(fileName);
-
-      anchor.search = '?' + pairs.join('&');
-
-      break;
-    }
+  if (urlParams.has('fileName')) {
+    urlParams.set('fileName', encodeURIComponent(fileName));
+    anchor.search = urlParams.toString();
   }
 });
