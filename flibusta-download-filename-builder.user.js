@@ -4,9 +4,6 @@
 // @match       *://flibusta.is/a/*
 // @match       *://flibusta.is/s/*
 // @match       *://flibusta.is/sequence/*
-// @match       *://flibusta.is/a/*
-// @match       *://flibusta.is/s/*
-// @match       *://flibusta.is/sequence/*
 // @match       *://flibustaongezhld6dibs2dps6vm4nvqg2kp7vgowbu76tzopgnhazqd.onion/a/*
 // @match       *://flibustaongezhld6dibs2dps6vm4nvqg2kp7vgowbu76tzopgnhazqd.onion/s/*
 // @match       *://flibustaongezhld6dibs2dps6vm4nvqg2kp7vgowbu76tzopgnhazqd.onion/sequence/*
