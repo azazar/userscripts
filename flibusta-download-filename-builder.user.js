@@ -7,7 +7,7 @@
 // @grant       GM_setClipboard
 // @grant       GM_download
 // @version     1.5
-// @description Добавляет название книги и автора в название загружаемого файла на flibusta.is
+// @description Добавляет название книги и автора в название загружаемого файла на flibusta.is. Пока работает только на страницах авторов, которые со всему книгами.
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js
 // @license     MIT
