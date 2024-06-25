@@ -2,7 +2,9 @@
 // @name        Ночная читалка для Флибусты
 // @namespace   Azazar's Scripts
 // @match       *://flibusta.is/b/*/read
-// @match       *://flibustahezeous3.onion/b/*/read
+// @match       *://flibustaongezhld6dibs2dps6vm4nvqg2kp7vgowbu76tzopgnhazqd.onion/b/*/read
+// @match       *://flibusta.i2p/b/*/read
+// @match       *://zmw2cyw2vj7f6obx3msmdvdepdhnw2ctc4okza2zjxlukkdfckhq.b32.i2p/b/*/read
 // @grant       GM_addStyle
 // @version     1.2
 // @description Шрифт побольше в читалке, ограничение ширины текста и ночной режим
