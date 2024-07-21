@@ -13,25 +13,35 @@
 (function() {
     'use strict';
 
-    // List of known paywall domains
-    const paywallDomains = [
-        'example.com',
-        'anotherpaywall.com'
-    ];
+    // Check if the current site is economist.com
+    function isEconomist() {
+        return window.location.hostname.includes('economist.com');
+    }
 
-    // Check if the current site has a paywall
-    function hasPaywall() {
-        return paywallDomains.some(domain => window.location.hostname.includes(domain));
+    // Function to hide the paywall
+    function hidePaywall() {
+        const style = document.createElement('style');
+        style.textContent = '.paywall { display: none !important; }';
+        document.head.appendChild(style);
     }
 
     // Main function to bypass paywall
     function bypassPaywall() {
-        if (hasPaywall()) {
-            console.log('Attempting to bypass paywall...');
-            // Add paywall bypass logic here
+        if (isEconomist()) {
+            console.log('Attempting to bypass paywall on economist.com...');
+            hidePaywall();
         }
     }
 
     // Run the bypass function
     bypassPaywall();
+
+    // Observe DOM changes to handle dynamically loaded paywalls
+    const observer = new MutationObserver(() => {
+        if (isEconomist()) {
+            hidePaywall();
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 })();
