@@ -16,6 +16,12 @@ This repository contains a collection of userscripts designed to enhance your br
 - **Description:** Blurs images, videos, and other media on adult websites.
 - **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js)
 
+## Paywall Bypass
+
+- **Filename:** paywall-bypass.user.js
+- **Description:** Attempts to bypass economistcom paywall. And other paywalls that exist on various websites in the future.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/paywall-bypass.user.js)
+
 ## Userscripts for Websites in Russian
 
 ### Качать с author.today названием без транслитерации
@@ -68,9 +74,3 @@ Feel free to submit issues or pull requests if you have suggestions or improveme
 ## License
 
 This repository is licensed under the MIT License.
-
-## Paywall Bypass
-
-- **Filename:** paywall-bypass.user.js
-- **Description:** Attempts to bypass paywalls on various websites.
-- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/paywall-bypass.user.js)
