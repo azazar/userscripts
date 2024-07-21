@@ -68,3 +68,9 @@ Feel free to submit issues or pull requests if you have suggestions or improveme
 ## License
 
 This repository is licensed under the MIT License.
+
+## Paywall Bypass
+
+- **Filename:** paywall-bypass.user.js
+- **Description:** Attempts to bypass paywalls on various websites.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/paywall-bypass.user.js)
