@@ -7,7 +7,7 @@
 // @grant       GM_getValue
 // @run-at      document-start
 // @license     MIT
-// @version     0.3
+// @version     0.4
 // @description Automatically blurs images and videos on adult websites
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/blur-adult-website-images.user.js
