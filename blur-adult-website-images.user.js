@@ -15,193 +15,135 @@
 (function () {
     'use strict';
 
-    let log;
+    const BLUR_STYLE = 'img,canvas,image,picture,video,iframe,.userjs-with-background-image {filter:blur(30px) !important}';
+    const ADULT_KEYWORDS = [
+        'fuck', 'milf', 'anal', 'xnxx', 'bbw', 'cum', 'pussy', 'cunt', 'xhamster', 'redtube',
+        'xxx', 'porn', 'squirt', 'swinger', 'xvideos', 'tits', 'hardcore', 'masturbation', 'pornhub',
+        'fucking', 'youporn', 'sexy', 'ass', 'gangbang', 'housewife', 'cock', 'orgasm', 'gay',
+        'blowjob', 'bisexual', 'cumshot', 'nude', 'seduction', 'pornstar', 'busty', 'threesome',
+        'handjob', 'panties', 'naked', 'adult', '2257', 'dmca', 'sexual', 'masturbating', 'hottie',
+        'hentai', 'cumshow', 'lesbian', 'brazzers', 'pure18'
+    ];
+    const ADULT_AD_HOSTS = ['.exosrv.com', '.contentabc.com'];
+    const MIN_ADULT_KEYWORDS = 2;
 
-    log = () => {}
-    //log = console.log;
+    let blurStyleElement;
+    let adultKeywordsDetected = 0;
+    let isAdultHost = false;
 
-    let blurCss = 'img,canvas,image,picture,video,iframe,.userjs-with-background-image {filter:blur(30px) !important}';
-
-    function setBlur(onoff) {
-      let id = 'blur_all_userscript';
-
-      let styleElement = document.getElementById(id);
-      let on = !!styleElement;
-
-      if (on === onoff) {
-        return;
-      }
-
-      if (onoff) {
-        styleElement = document.createElement('STYLE');
-        styleElement.setAttribute("id", id);
-        styleElement.appendChild(document.createTextNode(blurCss));
-        document.head.appendChild(styleElement);
-      }
-      else {
-        styleElement.parentNode.removeChild(styleElement);
-      }
+    function log(...args) {
+        // console.log(...args); // Uncomment to enable logging
     }
 
-    if (localStorage.getItem('noAdultKeywordsDetected') != 'true') {
-        setBlur(true);
+    function createBlurStyleElement() {
+        blurStyleElement = document.createElement('style');
+        blurStyleElement.innerHTML = BLUR_STYLE;
     }
 
-    let hostLc = location.host.toLowerCase();
-    let adultAdHosts = '.exosrv.com,.contentabc.com'.split(',');
+    function applyBlur(apply) {
+        log('applyBlur', apply);
+        if (apply === (blurStyleElement.parentElement !== null)) return;
+        apply ? document.head.appendChild(blurStyleElement) : document.head.removeChild(blurStyleElement);
+    }
 
-    for(let i = 0; i < adultAdHosts.length; i++) {
-        if (hostLc.endsWith(adultAdHosts[i])) {
-            log('adult ad host detected: ' + adultAdHosts[i]);
-            setBlur(true);
-            return;
+    function initialize() {
+        createBlurStyleElement();
+        if (isAdultContentDetected()) {
+            applyBlur(true);
         }
+        registerMenuCommands();
+        observeDOMChanges();
     }
 
-    setInterval(function () {
-        document.querySelectorAll('*[style]').forEach(function (e) {
-            let backgroundImage;
-
-            if (window.getComputedStyle) {
-                backgroundImage = getComputedStyle(e)['background-image'] !== 'none';
-            }
-            else {
-                backgroundImage = e.style['background-image'];
-                if (backgroundImage) {
-                    backgroundImage = backgroundImage !== 'none';
-                }
-            }
-
-            if (backgroundImage) {
-                e.classList.add('userjs-with-background-image');
-            }
-            else {
-                e.classList.remove('userjs-with-background-image');
-            }
-        });
-    }, 200);
-
-    let adultWords =
-        'fuck,milf,anal,xnxx,bbw,cum,pussy,cunt,xhamster,redtube,' +
-        'xxx,porn,squirt,swinger,xvideos,tits,hardcore,masturbation,pornhub,' +
-        'fucking,youporn,sexy,ass,gangbang,housewife,pussy,cock,orgasm,gay,' +
-        'blowjob,bisexual,cumshot,nude,seduction,pornstar,busty,' +
-        'threesome,handjob,panties,xxx,naked,adult,2257,dmca,sexual,masturbating,' +
-        'hottie,hentai,cumshow,lesbian';
-
-    adultWords += ',brazzers,pure18';
-
-    let adultWordSet = {};
-    let adultHostname = false;
-
-    let hostnameWords = location.host.toLowerCase().split(/[\._\-0-9]+/);
-
-    let adultWordsFound = 0;
-
-    let minAdultWords = 2;
-
-    adultWords.split(',').forEach(function (word) {
-        adultWordSet['keyword:' + word] = true;
-
-        hostnameWords.forEach(function (hostnamePart) {
-            if (hostnamePart.endsWith(word) || hostnamePart.startsWith(word)) {
-                adultHostname = true;
-            }
-        });
-    });
-
-    let doctypeName = document.doctype ? document.doctype.name : undefined;
-
-    if (document.body && document.body.children.length === 1 && document.body.children[0].tagName === 'IMG') {
-        doctypeName = "image";
-    }
-
-    GM_registerMenuCommand("Blur Images", () => {
-        adultWordsFound += minAdultWords;
-        setBlur(true);
-    }, "b");
-
-    GM_registerMenuCommand("Disable Blur", () => {
-        adultWordsFound = 0;
-        setBlur(false);
-    }, "b");
-
-    if (adultHostname) {
-        log('Hostname contain adult keyword(s).');
-        setBlur(true);
-        return;
-    }
-
-    function checkTextContent() {
-        if (document.querySelector('meta[name="RATING"][content="RTA-5042-1996-1400-1577-RTA"]')) {
-            adultWordsFound = 100500;
-            return;
+    function isAdultContentDetected() {
+        if (localStorage.getItem('noAdultKeywordsDetected') !== 'true') {
+            return true;
         }
 
-        if (adultWordsFound >= minAdultWords) {
-            return;
+        const hostnameParts = location.host.toLowerCase().split(/[\._\-0-9]+/);
+        isAdultHost = ADULT_AD_HOSTS.some(host => location.host.endsWith(host)) || 
+                      ADULT_KEYWORDS.some(keyword => hostnameParts.some(part => part.includes(keyword)));
+        
+        if (isAdultHost) {
+            log('Adult host detected.');
+            return true;
         }
 
-        let textContent = '';
+        return false;
+    }
 
-        if (document.body) {
-            textContent += "\n" + document.body.textContent;
-        }
-
-        document.querySelectorAll("img[alt]").forEach(function (e) {
-            textContent += "\n" + e.getAttribute("alt");
-        });
-
-        document.querySelectorAll("*[title]").forEach(function (e) {
-            textContent += "\n" + e.getAttribute("title");
-        });
-
-        textContent += "\n" + document.title;
-
-        document.querySelectorAll("meta[name]").forEach(function (e) {
-            if (e.getAttribute("name") === "keywords" || e.getAttribute("name") === "description") {
-                textContent += "\n" + e.getAttribute("content");
+    function checkForAdultContent(mutations) {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        processElement(node);
+                    }
+                });
+            } else if (mutation.type === 'attributes') {
+                processElement(mutation.target);
             }
         });
 
-        let matches = textContent.match(/\w+/g);
+        localStorage.setItem('noAdultKeywordsDetected', adultKeywordsDetected === 0);
+        applyBlur(adultKeywordsDetected >= MIN_ADULT_KEYWORDS);
+    }
 
-        if (matches === null) {
-            log('no words found');
-            return;
-        }
+    function processElement(element) {
+        if (!element.__checkedForAdultContent) {
+            element.__checkedForAdultContent = true;
+            const textContent = element.textContent || '';
 
-        matches.forEach(function (match) {
-            if (adultWordSet['keyword:' + match.toLowerCase()]) {
-                log('Adult keyword detected: ' + match.toLowerCase());
-                adultWordsFound++;
-                delete adultWordSet['keyword:' + match.toLowerCase()];
+            if (checkTextForKeywords(textContent)) {
+                return;
             }
-        });
 
-        log('Adult keywords detected:', adultWordsFound);
+            if (element.alt) {
+                checkTextForKeywords(element.alt);
+            }
 
-        localStorage.setItem('noAdultKeywordsDetected', adultWordsFound === 0);
+            if (element.title) {
+                checkTextForKeywords(element.title);
+            }
 
-        if (adultWordsFound < minAdultWords) {
-            setBlur(false);
-        } else {
-            setBlur(true);
+            if (element.name === 'keywords' || element.name === 'description') {
+                checkTextForKeywords(element.content);
+            }
         }
     }
 
-    log('loading');
-    checkTextContent();
+    function checkTextForKeywords(text) {
+        const wordMatches = text.match(/\w+/g) || [];
 
-    window.addEventListener('load', function (ev) {
-        log('loaded');
-        checkTextContent();
-    });
+        wordMatches.forEach(word => {
+            if (ADULT_KEYWORDS.includes(word.toLowerCase())) {
+                log('Adult keyword detected:', word.toLowerCase());
+                adultKeywordsDetected++;
+            }
+        });
 
-    let observer = new MutationObserver(function() {
-        log('dom modified');
-        checkTextContent();
-    });
+        return adultKeywordsDetected >= MIN_ADULT_KEYWORDS;
+    }
 
-    observer.observe(document, { attributes: true, childList: true, subtree: true });
+    function registerMenuCommands() {
+        GM_registerMenuCommand("Blur Images", () => {
+            adultKeywordsDetected += MIN_ADULT_KEYWORDS;
+            applyBlur(true);
+        }, "b");
+
+        GM_registerMenuCommand("Disable Blur", () => {
+            adultKeywordsDetected = 0;
+            applyBlur(false);
+        }, "b");
+    }
+
+    function observeDOMChanges() {
+        const observer = new MutationObserver(checkForAdultContent);
+        observer.observe(document, { attributes: true, childList: true, subtree: true });
+
+        document.addEventListener('load', () => checkForAdultContent([{ type: 'childList', addedNodes: [document.body] }]));
+        window.addEventListener('load', () => checkForAdultContent([{ type: 'childList', addedNodes: [document.body] }]));
+    }
+
+    initialize();
 })();
