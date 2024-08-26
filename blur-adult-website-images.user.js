@@ -3,6 +3,8 @@
 // @namespace   Azazar's Scripts
 // @match       *://*/*
 // @grant       GM_registerMenuCommand
+// @grant       GM_setValue
+// @grant       GM_getValue
 // @run-at      document-start
 // @license     MIT
 // @version     0.3
@@ -56,7 +58,7 @@
     }
 
     function isAdultContentDetected() {
-        if (localStorage.getItem('noAdultKeywordsDetected') !== 'true') {
+        if (GM_getValue('noAdultKeywordsDetected') !== true) {
             return true;
         }
 
@@ -85,7 +87,7 @@
             }
         });
 
-        localStorage.setItem('noAdultKeywordsDetected', adultKeywordsDetected === 0);
+        GM_setValue('noAdultKeywordsDetected', adultKeywordsDetected === 0);
         applyBlur(adultKeywordsDetected >= MIN_ADULT_KEYWORDS);
     }
 
