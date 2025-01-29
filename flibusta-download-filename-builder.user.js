@@ -15,7 +15,7 @@
 // @match       *://zmw2cyw2vj7f6obx3msmdvdepdhnw2ctc4okza2zjxlukkdfckhq.b32.i2p/sequence/*
 // @grant       GM_setClipboard
 // @grant       GM_download
-// @version     1.5
+// @version     1.6
 // @description Добавляет название книги и автора в название загружаемого файла на flibusta.is. Без транслитерации и всякой фигни. Пока работает только на страницах авторов, которые со всему книгами.
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js
 // @downloadURL https://raw.githubusercontent.com/azazar/userscripts/main/flibusta-download-filename-builder.user.js
@@ -72,8 +72,13 @@ Array.from(document.querySelectorAll('form[action^="/a/"] a[href], form[action^=
         let id = match[1];
         let type = match[2];
 
-        if (type === 'download' && a.innerText === '(скачать)') {
-          type = 'fb2';
+        if (type === 'download') {
+          if (a.innerText === '(скачать)') {
+            type = 'fb2';
+          }
+          else if (a.innerText.startsWith('(скачать ') && a.innerText.endsWith(')')) {
+            type = a.innerText.substring(9, a.innerText.length - 1);
+          }
         }
 
         if (books[id]) {
