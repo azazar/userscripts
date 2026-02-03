@@ -3,7 +3,7 @@
 // @namespace   Azazar's Scripts
 // @description Убирает рекламу, позволяет читать скрытые комментарии, постить комментарии там, где они отключены, смотреть отключенные оценки.
 // @match       *://samlib.ru/*
-// @version     1.03
+// @version     1.03.1
 // @grant       none
 // @license     MIT
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/samlib-optimized.user.js
@@ -269,13 +269,13 @@
         }
 
         // Add download attribute for FB2 anchor
-        let authorElement = _('div h3');
-        let titleElement = _('center h2');
+        let authorTitleElement = _('center h2');
         let fb2AnchorElement = _('small ul li a[href$=".fb2.zip"]');
 
-        if (authorElement && titleElement && fb2AnchorElement) {
-            let author = authorElement.innerText.split(':')[0].trim();
-            let title = titleElement.innerText.trim();
+        if (authorTitleElement && fb2AnchorElement) {
+            let authorTitle = authorTitleElement.innerText.split("\n");
+            let author = authorTitle[0].trim();
+            let title = authorTitle[1].trim();
             let originalFileExtension = 'fb2.zip';
 
             fb2AnchorElement.setAttribute("download", `${title}. ${author}.${originalFileExtension}`);
