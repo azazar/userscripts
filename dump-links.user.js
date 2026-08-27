@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Dump links
 // @namespace   Azazar's Scripts
-// @version     1.1.2
+// @version     1.2.0
 // @author      -
 // @description Dump all external links and images
 // @grant       GM_registerMenuCommand
@@ -62,6 +62,19 @@ function getLinks() {
   res['images'] = links;
 
   links = [];
+  Array.from(document.querySelectorAll('*')).forEach(element => {
+    let backgroundImage = getComputedStyle(element).backgroundImage;
+    Array.from(backgroundImage.matchAll(/url\(["']?(.+?)["']?\)/g)).forEach(match => {
+      ae.href = match[1];
+      if (isExternal(ae.href) && !links.includes(ae.href)) {
+        links.push(ae.href);
+      }
+    });
+  });
+
+  res['cssImages'] = links;
+
+  links = [];
   Array.from(document.querySelectorAll('video[src]')).forEach(v => {
     ae.href = v.src;
     if (isExternal(ae.href)) {
@@ -88,6 +101,7 @@ function getLinksStr() {
     "Page URL: " + location.href + "\n\n" +
     buildSection("Anchors", links['anchors']) +
     buildSection("Images", links['images']) +
+    buildSection("CSS Images", links['cssImages']) +
     buildSection("Videos", links['videos']);
 
   return message;
