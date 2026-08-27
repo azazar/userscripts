@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Dump links
 // @namespace   Azazar's Scripts
-// @version     1.1.1
+// @version     1.1.2
 // @author      -
 // @description Dump all external links and images
 // @grant       GM_registerMenuCommand
@@ -74,13 +74,21 @@ function getLinks() {
   return res;
 }
 
+function buildSection(title, values) {
+  if (values.length === 0) {
+    return '';
+  }
+
+  return title + ":\n\n" + values.join("\n") + "\n\n";
+}
+
 function getLinksStr() {
   let links = getLinks();
   let message =
     "Page URL: " + location.href + "\n\n" +
-    "Anchors:\n\n" + links['anchors'].join("\n") + "\n\n" +
-    "Images:\n\n" + links['images'].join("\n") + "\n\n" +
-    "Videos:\n\n" + links['videos'].join("\n");
+    buildSection("Anchors", links['anchors']) +
+    buildSection("Images", links['images']) +
+    buildSection("Videos", links['videos']);
 
   return message;
 }
