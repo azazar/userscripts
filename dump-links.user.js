@@ -20,7 +20,7 @@ function sanitizeHost(host) {
 }
 
 function endsWith(str, wth) {
-  return str.lenght >= wth.length && str.substring(str.lenght - wth.lenght) === wth;
+  return str.length >= wth.length && str.substring(str.length - wth.length) === wth;
 }
 
 function isExternal(url) {
