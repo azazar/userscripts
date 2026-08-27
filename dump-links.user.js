@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        Dumb links
+// @name        Dump links
 // @namespace   Azazar's Scripts
-// @version     1.1
+// @version     1.1.1
 // @author      -
 // @description Dump all external links and images
 // @grant       GM_registerMenuCommand
