@@ -79,7 +79,7 @@ function buildSection(title, values) {
     return '';
   }
 
-  return title + ":\n\n" + values.join("\n") + "\n\n";
+  return '# ' + title + ":\n\n - " + values.join("\n - ") + "\n\n";
 }
 
 function getLinksStr() {
@@ -108,5 +108,5 @@ if (window.top != window.self) {
 }
 
 
-GM_registerMenuCommand( "Dump External Links to Console" + suffix, dumpLinks);
-GM_registerMenuCommand( "Copy External Links to Clipboard" + suffix, copyLinks);
+GM_registerMenuCommand("Dump External Links to Console" + suffix, dumpLinks);
+GM_registerMenuCommand("Copy External Links to Clipboard" + suffix, copyLinks);
