@@ -3,7 +3,7 @@
 // @namespace   Azazar's Scripts
 // @match       *://*/*
 // @grant       none
-// @version     0.2.1
+// @version     0.2.2
 // @author      -
 // @description Handle mouse wheel events to navigate videos
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/wheel-video-navigator.user.js
@@ -42,6 +42,9 @@
         }
 
         event.preventDefault();
+        if (!video.paused) {
+            video.pause();
+        }
         video.currentTime += event.deltaY < 0 ? skipTime : -skipTime;
     }, { passive: false });
 })();
