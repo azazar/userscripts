@@ -32,7 +32,7 @@
     }
 
     document.addEventListener('wheel', event => {
-        if (event.deltaY === 0) {
+        if (event.deltaY === 0 || event.ctrlKey || event.altKey || event.shiftKey || event.metaKey) {
             return;
         }
 
