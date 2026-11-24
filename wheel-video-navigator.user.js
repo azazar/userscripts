@@ -3,7 +3,7 @@
 // @namespace   Azazar's Scripts
 // @match       *://*/*
 // @grant       none
-// @version     0.2
+// @version     0.2.1
 // @author      -
 // @description Handle mouse wheel events to navigate videos
 // @updateURL   https://raw.githubusercontent.com/azazar/userscripts/main/wheel-video-navigator.user.js
