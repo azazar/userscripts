@@ -4,6 +4,12 @@ This repository contains a collection of userscripts designed to enhance your br
 
 ## General Userscripts
 
+### Wheel Video Navigator
+
+- **Filename:** wheel-video-navigator.user.js
+- **Description:** Handle mouse wheel events to navigate videos.
+- **Install Link:** [Install](https://raw.githubusercontent.com/azazar/userscripts/main/wheel-video-navigator.user.js)
+
 ### Printable and Readable Books Downloader for Fanfiction and Fictionpress
 
 - **Filename:** printable-books-downloader-fanfiction-fictionpress.user.js
